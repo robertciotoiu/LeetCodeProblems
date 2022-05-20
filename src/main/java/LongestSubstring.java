@@ -2,6 +2,10 @@ import java.util.HashMap;
 import java.util.HashSet;
 
 /**
+ * 3. Longest Substring Without Repeating Characters
+ *
+ * Difficulty: Medium
+ *
  * Given a string s, find the length of the longest substring without repeating characters.
  * Example 1:
  * <p>
