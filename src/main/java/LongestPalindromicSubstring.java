@@ -1,4 +1,7 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.IntStream;
 
 /**
  * 5. Longest Palindromic Substring
@@ -34,20 +37,14 @@ public class LongestPalindromicSubstring {
      * @return longest palindrome string
      */
     public String find(String input) {
-        List<String> substrings = new ArrayList<>();
-        Optional<String> longestSubstring;
+        var longestSubstring = IntStream.range(0, input.length())
+                .parallel()
+                .mapToObj(i -> generateSubstrings(input, input.length() - i))
+                .map(i -> i.parallelStream().filter(this::isPalindrome).findFirst())
+                .filter(Optional::isPresent)
+                .findFirst();
 
-        for (int i = 0; i < input.length(); i++) {
-            substrings.addAll(generateSubstrings(input, input.length() - i));
-
-            longestSubstring = substrings.stream()
-                    .filter(this::isPalindrome)
-                    .findFirst();
-
-            if (longestSubstring.isPresent())
-                return longestSubstring.get();
-        }
-        return "";
+        return longestSubstring.orElse(Optional.empty()).orElse("");
     }
 
     /**
