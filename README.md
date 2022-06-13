@@ -1,3 +1,4 @@
+[![build](https://github.com/robertciotoiu/LeetCodeProblems/actions/workflows/integrate.yml/badge.svg?branch=master)](https://github.com/robertciotoiu/LeetCodeProblems/actions/workflows/integrate.yml)
 ### LeetCode problems solutions
 
 👨‍💻 Coding solutions for various LeetCode problems.
