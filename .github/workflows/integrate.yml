@@ -30,6 +30,5 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
         
-      - name: Maven build
-      - name: Build with Maven
+      - name: Run maven build
         run: mvn --batch-mode --update-snapshots package
