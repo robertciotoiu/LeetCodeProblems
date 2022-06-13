@@ -1,4 +1,4 @@
-name: master continuous integration
+name: build
 
 on:
   push:
