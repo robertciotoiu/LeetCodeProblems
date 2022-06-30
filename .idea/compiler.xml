@@ -12,7 +12,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="LeetCodeProblems" options="--add-modules java.base" />
+      <module name="LeetCodeProblems" options="" />
     </option>
   </component>
 </project>

@@ -1,6 +1,8 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 public class LongestSubstringUnitTests {
 
     LongestSubstring classUnderTest = new LongestSubstring();
@@ -13,7 +15,7 @@ public class LongestSubstringUnitTests {
         //when
         var result = classUnderTest.findWithoutRepeatingCharacters(inputStr);
         //then
-        Assertions.assertEquals(expected, result, "Expected: " + inputStr + "\nResult: " + result +".\nHint:" +
+        assertEquals(expected, result, "Expected: " + inputStr + "\nResult: " + result +".\nHint:" +
                 "Search should be case sensitive");
     }
 
@@ -25,7 +27,7 @@ public class LongestSubstringUnitTests {
         //when
         var result = classUnderTest.findWithoutRepeatingCharacters(inputStr);
         //then
-        Assertions.assertEquals(expected, result, "Expected: " + inputStr + "\nResult: " + result);
+        assertEquals(expected, result, "Expected: " + inputStr + "\nResult: " + result);
 
     }
 
@@ -37,7 +39,7 @@ public class LongestSubstringUnitTests {
         //when
         var result = classUnderTest.findWithoutRepeatingCharacters(inputStr);
         //then
-        Assertions.assertEquals(expected, result, "Expected: " + inputStr + "\nResult: " + result);
+        assertEquals(expected, result, "Expected: " + inputStr + "\nResult: " + result);
     }
 
     @Test
@@ -48,7 +50,7 @@ public class LongestSubstringUnitTests {
         //when
         var result = classUnderTest.findWithoutRepeatingCharacters(inputStr);
         //then
-        Assertions.assertEquals(expected, result, "Expected: " + inputStr + "\nResult: " + result);
+        assertEquals(expected, result, "Expected: " + inputStr + "\nResult: " + result);
     }
 
     @Test
@@ -59,7 +61,7 @@ public class LongestSubstringUnitTests {
         //when
         var result = classUnderTest.findWithoutRepeatingCharacters(inputStr);
         //then
-        Assertions.assertEquals(expected, result, "Expected: " + inputStr + "\nResult: " + result);
+        assertEquals(expected, result, "Expected: " + inputStr + "\nResult: " + result);
 
     }
 }
