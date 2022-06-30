@@ -1,7 +1,6 @@
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class LongestSubstringUnitTests {
 
@@ -15,7 +14,7 @@ public class LongestSubstringUnitTests {
         //when
         var result = classUnderTest.findWithoutRepeatingCharacters(inputStr);
         //then
-        assertEquals(expected, result, "Expected: " + inputStr + "\nResult: " + result +".\nHint:" +
+        assertEquals(expected, result, "Expected: " + inputStr + "\nResult: " + result + ".\nHint:" +
                 "Search should be case sensitive");
     }
 
@@ -54,7 +53,7 @@ public class LongestSubstringUnitTests {
     }
 
     @Test
-    public void testSample1(){
+    public void testSample1() {
         //given
         var inputStr = "abcabcbb";
         var expected = 3;
