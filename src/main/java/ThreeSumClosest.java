@@ -1,3 +1,8 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Set;
+import java.util.TreeSet;
+
 /**
  * 16. 3Sum Closest
  * <p>
@@ -32,6 +37,34 @@
  */
 public class ThreeSumClosest {
     public int threeSumClosest(int[] nums, int target) {
-        return 0;
+        Set<Integer> sums = new TreeSet<>();
+        fillSums(sums, nums);
+        if (sums.contains(target)) return target;
+        else return findClosestNumber(new ArrayList<>(sums), target);
+    }
+
+    private void fillSums(Set<Integer> sums, int[] nums) {
+        for (int fIndex = 0; fIndex < nums.length - 2; fIndex++) {
+            for (int sIndex = fIndex + 1; sIndex < nums.length - 1; sIndex++) {
+                for (int tIndex = sIndex + 1; tIndex < nums.length; tIndex++) {
+                    int currentSum = nums[fIndex] + nums[sIndex] + nums[tIndex];
+                    sums.add(currentSum);
+                }
+            }
+        }
+    }
+
+    private int findClosestNumber(ArrayList<Integer> sums, int target) {
+        int firstIndex = 0;
+        int lastIndex = sums.size() - 1;
+        int insertionPoint = Math.abs(Collections.binarySearch(sums, target)) - 1;
+        if (insertionPoint - 1 < firstIndex) return sums.get(firstIndex);
+        if (insertionPoint > lastIndex) return sums.get(lastIndex);
+
+        int firstNumber = sums.get(insertionPoint - 1);
+        int secondNumber = sums.get(insertionPoint);
+        if (Math.abs(target - firstNumber) < Math.abs(target - secondNumber)) {
+            return firstNumber;
+        } else return secondNumber;
     }
 }
