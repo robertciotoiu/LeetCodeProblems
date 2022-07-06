@@ -30,11 +30,15 @@ public class ReverseInteger {
      */
     public int reverse(int x) {
         int index = 10;
-        int result = 0;
+        long result = 0;
         while (x != 0) {
             result = result * index + x % index;
             x = x / index;
         }
-        return result;
+        return isValid(result) ? (int) result : 0;
+    }
+
+    private boolean isValid(long value) {
+        return value < Integer.MAX_VALUE && value > Integer.MIN_VALUE;
     }
 }

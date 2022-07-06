@@ -15,6 +15,7 @@ class ReverseIntegerTest {
             "123,321",
             "-123,-321",
             "120,21",
+            "1534236469,0",
     })
     public void reverseTest(int x,int expected) {
         int actual = reverseInteger.reverse(x);
